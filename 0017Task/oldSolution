@@ -1,0 +1,48 @@
+private static int calculate(int[] source) {
+		
+		boolean flag = false;
+		
+		/*for(int x = 0; x < source.length-1; x++){
+			if(source[x] != source[x+1]){
+				flag=false;
+				break;
+			}
+			flag = true;
+		}
+		
+		if(flag == true){
+			return 1;
+		}*/
+		
+		int lengthIndex = 0;
+		
+		
+		for(int i = 1; i <= source.length / 2; i++){
+			if(source.length % i == 0){
+				lengthIndex = source.length/i;
+				
+				for(int j = lengthIndex; j < source.length; j += lengthIndex){
+					for(int k = 0; k < lengthIndex; k++){
+						if(source[k] != source[j + k]){
+							flag = false;
+							break;
+						}
+						flag = true;
+					}
+					if(flag == false){
+						break;
+					}
+				}
+				
+			}
+			if (flag == true){
+				return lengthIndex;
+			}
+		}
+		if(lengthIndex == 0){
+			lengthIndex = source.length;
+		}
+		
+		return source.length;
+		
+	}
