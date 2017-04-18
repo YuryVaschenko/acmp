@@ -1,2 +1,2 @@
 # acmp
-Tasks solutions acmp.ru
+Tasks solutions www.acmp.ru
